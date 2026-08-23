@@ -3,10 +3,15 @@
    以後要更新,只要改這個檔案就好,不用動 index.html / act.html
 
    1) MONTH_LABEL：目前顯示的月份標題
-   2) ACTS：每位歌手/組合的資料。videos 陣列請貼「南方酒館官方 IG」
-      貼文或限時動態的網址(手機 IG App 內點分享 → 複製連結)。
-      貼文網址長這樣：https://www.instagram.com/reel/xxxxxxxxx/
-      videos 留空時,頁面會顯示「影片準備中」。
+   2) ACTS：每位歌手/組合的資料。
+      - intro / style / instruments / genres 這四個欄位分別對應
+        「簡介」「演出形式」「樂器」「擅長歌曲種類」,直接把文字
+        打在引號中間就好,例如 style: "雙人組合,主唱+吉他伴奏"。
+        留空字串 "" 的話,歌手頁面上就不會顯示那一項。
+      - videos 陣列請貼「南方酒館官方 IG」貼文或限時動態的網址
+        (手機 IG App 內點分享 → 複製連結)。
+        貼文網址長這樣：https://www.instagram.com/reel/xxxxxxxxx/
+        videos 留空時,頁面會顯示「影片準備中」。
    3) SCHEDULE：每一天的演出時段,對應到 ACTS 裡的 id。
       公休寫 { closed: true }
       包場寫 { private: true, sets:[...] }  sets 可留空陣列
@@ -18,6 +23,10 @@ const MONTH_SUBLABEL = "南方酒館 演出班表";
 const ACTS = {
   "bb": {
     name: "ㄌㄌ",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DcTSesaz41V/",
       "https://www.instagram.com/reel/DZ6e37Wvxll/",
@@ -26,12 +35,20 @@ const ACTS = {
   },
   "suzhan-weiye": {
     name: "蘇珊 & 威爺",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DZk-a_MzLQj/"
     ]
   },
   "makewish": {
     name: "Makewish",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DVeQW5oEkGt/",
       "https://www.instagram.com/reel/DTDUHuVEpC-/"
@@ -39,12 +56,20 @@ const ACTS = {
   },
   "anna-bb": {
     name: "安娜 & ㄌㄌ",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DUQSuOSEuvU/"
     ]
   },
   "qiaorou": {
     name: "巧柔",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DUp4cwRklMr/",
       "https://www.instagram.com/reel/DTXFWtTgCOB/"
@@ -52,6 +77,10 @@ const ACTS = {
   },
   "nanfang-xiaolai": {
     name: "南方樂團 ft. 小賴",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DL9jKR3ysAw/",
       "https://www.instagram.com/reel/DXazOywD-Jm/",
@@ -60,6 +89,10 @@ const ACTS = {
   },
   "mianmian": {
     name: "瞇瞇",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DZCs79dPU4R/",
       "https://www.instagram.com/reel/DaK53gHvSkB/"
@@ -67,6 +100,10 @@ const ACTS = {
   },
   "binggan": {
     name: "餅乾",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DQ_sNQfEqah/",
       "https://www.instagram.com/reel/DSFQD8aEnfj/"
@@ -74,10 +111,18 @@ const ACTS = {
   },
   "tiehan-rouqing": {
     name: "鐵焊柔情",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: []
   },
   "qilai": {
     name: "七賴",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DaS68ZyPp89/",
       "https://www.instagram.com/reel/DaA8hcePl7b/",
@@ -87,28 +132,48 @@ const ACTS = {
   },
   "mianmian-aqi": {
     name: "瞇瞇 & 阿七",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DcRKVD3PVus/"
     ]
   },
   "nanfang-qiaorou": {
     name: "南方樂團 ft. 巧柔",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/DbDdw8pzCEn/"
     ]
   },
   "anna-kunlin": {
     name: "安娜 & 昆霖",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: []
   },
   "nanfang-anbb": {
     name: "南方樂團 ft. 安娜ㄌㄌ",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: [
       "https://www.instagram.com/reel/Dar8qqGPAId/"
     ]
   },
   "jay-cosplay": {
     name: "周杰倫模仿大賽",
+    intro: "",
+    style: "",
+    instruments: "",
+    genres: "",
     videos: []
   }
 };
