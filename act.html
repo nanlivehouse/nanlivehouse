@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歌手介紹｜南方酒館</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="wrap" style="padding-top:36px;">
+  <a class="back-link" href="index.html">← 回班表</a>
+
+  <div class="act-hero">
+    <div class="kicker">南方酒館 駐唱</div>
+    <h1 id="act-name">—</h1>
+    <div class="dates-row" id="dates-row"></div>
+  </div>
+
+  <h2 class="section-title">舞台片段</h2>
+  <div id="video-area"></div>
+
+  <footer>
+    追蹤 <a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">@nanlivehouse</a> 看更多現場演出
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const act = ACTS[id];
+
+  const nameEl = document.getElementById('act-name');
+  const datesRow = document.getElementById('dates-row');
+  const videoArea = document.getElementById('video-area');
+
+  if (!act) {
+    nameEl.textContent = '找不到這位歌手';
+    videoArea.innerHTML = `<div class="empty-state"><div class="big">請從班表點選歌手名字進入</div></div>`;
+  } else {
+    nameEl.textContent = act.name;
+    document.title = act.name + '｜南方酒館';
+
+    // 找出這個月所有出場日期
+    const dates = [];
+    for (let day = 1; day <= DAYS_IN_MONTH; day++) {
+      const info = SCHEDULE[day];
+      if (!info || !info.sets) continue;
+      if (info.sets.some(s => s.a === id)) dates.push(day);
+    }
+    dates.forEach(d => {
+      const pill = document.createElement('span');
+      pill.className = 'date-pill';
+      pill.textContent = `9/${d}`;
+      datesRow.appendChild(pill);
+    });
+
+    // 影片區
+    if (act.videos && act.videos.length) {
+      const grid = document.createElement('div');
+      grid.className = 'video-grid';
+      act.videos.forEach(url => {
+        const box = document.createElement('div');
+        box.className = 'video-embed';
+        box.innerHTML = `
+          <blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0;"></blockquote>`;
+        grid.appendChild(box);
+      });
+      videoArea.appendChild(grid);
+
+      // 載入 IG 官方 embed script 來渲染貼文
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(s);
+    } else {
+      videoArea.innerHTML = `
+        <div class="empty-state">
+          <div class="big">影片準備中</div>
+          這位歌手的精彩片段即將上線,先追蹤 IG 搶先看。
+        </div>`;
+    }
+  }
+</script>
+
+</body>
+</html>
