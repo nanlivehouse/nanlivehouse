@@ -23,11 +23,11 @@ const MONTH_SUBLABEL = "南方酒館 演出班表";
 const ACTS = {
   "bb": {
     name: "ㄌㄌ",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
-    videos: [
+   intro: "南方酒館的固定班底,就算沒排班也會突然出現在店裡,唱腔溫暖細膩。",
+   style: "單人自彈自唱",
+   instruments: "吉他",
+   genres: "抒情、民謠、華語流行",
+   videos: [
       "https://www.instagram.com/reel/DcTSesaz41V/",
       "https://www.instagram.com/reel/DZ6e37Wvxll/",
       "https://www.instagram.com/reel/DPyd6_IktMN/"
@@ -35,20 +35,20 @@ const ACTS = {
   },
   "suzhan-weiye": {
     name: "蘇珊 & 威爺",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "資深老師級雙人組合。",
+    style: "雙人男女組合",
+    instruments: "keyboard",
+    genres: "華語、英語金曲",
     videos: [
       "https://www.instagram.com/reel/DZk-a_MzLQj/"
     ]
   },
   "makewish": {
     name: "Makewish",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "阿七＆問問搭配的超強雙人組",
+    style: "雙人男女組合",
+    instruments: "吉他",
+    genres: "經典中英流行、校園民歌",
     videos: [
       "https://www.instagram.com/reel/DVeQW5oEkGt/",
       "https://www.instagram.com/reel/DTDUHuVEpC-/"
@@ -56,20 +56,20 @@ const ACTS = {
   },
   "anna-bb": {
     name: "安娜 & ㄌㄌ",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "主持及歌唱水準一流的雙人組合",
+    style: "雙人男女組合",
+    instruments: "吉他",
+    genres: "國台語流行、民謠",
     videos: [
       "https://www.instagram.com/reel/DUQSuOSEuvU/"
     ]
   },
   "qiaorou": {
     name: "巧柔",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "來自馬來西亞的獨特女聲",
+    style: "雙人組合",
+    instruments: "吉他",
+    genres: "經典英語、華語、台語流行",
     videos: [
       "https://www.instagram.com/reel/DUp4cwRklMr/",
       "https://www.instagram.com/reel/DTXFWtTgCOB/"
@@ -77,10 +77,10 @@ const ACTS = {
   },
   "nanfang-xiaolai": {
     name: "南方樂團 ft. 小賴",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "百萬爆紅影片的南方打工仔,搭配full band給你滿滿的大平台",
+    style: "樂團",
+    instruments: "電吉他,貝斯,keyboard,爵士鼓",
+    genres: "英語、華語流行歌曲、台灣獨立樂團歌曲",
     videos: [
       "https://www.instagram.com/reel/DL9jKR3ysAw/",
       "https://www.instagram.com/reel/DXazOywD-Jm/",
@@ -89,10 +89,10 @@ const ACTS = {
   },
   "mianmian": {
     name: "瞇瞇",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "靦腆的笑容搭配唱入心坎裡的獨特嗓音,最適合喝一杯",
+    style: "單人自彈自唱",
+    instruments: "吉他",
+    genres: "民謠、華語、台語流行",
     videos: [
       "https://www.instagram.com/reel/DZCs79dPU4R/",
       "https://www.instagram.com/reel/DaK53gHvSkB/"
@@ -100,10 +100,10 @@ const ACTS = {
   },
   "binggan": {
     name: "餅乾",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "會讓你帶著好心情走出這家店，主持功力一流",
+    style: "單人自彈自唱",
+    instruments: "吉他",
+    genres: "民謠、華語流行",
     videos: [
       "https://www.instagram.com/reel/DQ_sNQfEqah/",
       "https://www.instagram.com/reel/DSFQD8aEnfj/"
@@ -111,18 +111,18 @@ const ACTS = {
   },
   "tiehan-rouqing": {
     name: "鐵焊柔情",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "原住民雙人組合",
+    style: "雙人男歌手組合",
+    instruments: "吉他",
+    genres: "民謠、華語流行",
     videos: []
   },
   "qilai": {
     name: "七賴",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "finger style吉他王阿七搭配新生代歌手小賴的最強組合",
+    style: "雙人男歌手組合",
+    instruments: "吉他",
+    genres: "民謠、華語、台語流行",
     videos: [
       "https://www.instagram.com/reel/DaS68ZyPp89/",
       "https://www.instagram.com/reel/DaA8hcePl7b/",
@@ -133,8 +133,8 @@ const ACTS = {
   "mianmian-aqi": {
     name: "瞇瞇 & 阿七",
     intro: "",
-    style: "",
-    instruments: "",
+    style: "雙人男歌手組合",
+    instruments: "民謠、華語、台語流行",
     genres: "",
     videos: [
       "https://www.instagram.com/reel/DcRKVD3PVus/"
@@ -142,28 +142,28 @@ const ACTS = {
   },
   "nanfang-qiaorou": {
     name: "南方樂團 ft. 巧柔",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "大馬女歌手配上full band演出，絕對讓你大飽耳福",
+    style: "樂團",
+    instruments: "電吉他,貝斯,keyboard,爵士鼓",
+    genres: "英文、華語流行",
     videos: [
       "https://www.instagram.com/reel/DbDdw8pzCEn/"
     ]
   },
   "anna-kunlin": {
     name: "安娜 & 昆霖",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "雙人男女組合",
+    style: "雙人男女組合",
+    instruments: "吉他",
+    genres: "英文、華語流行",
     videos: []
   },
   "nanfang-anbb": {
     name: "南方樂團 ft. 安娜ㄌㄌ",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "雙人組合搭配full band演出，喜歡樂團的你不容錯過",
+    style: "樂團",
+    instruments: "電吉他,貝斯,keyboard,爵士鼓",
+    genres: "英文、華語流行",
     videos: [
       "https://www.instagram.com/reel/Dar8qqGPAId/"
       "https://www.instagram.com/reel/Db0qt9nv4Jj/"
@@ -171,10 +171,10 @@ const ACTS = {
   },
   "jay-cosplay": {
     name: "周杰倫模仿大賽",
-    intro: "",
-    style: "",
-    instruments: "",
-    genres: "",
+    intro: "周杰倫模仿歌唱大賽",
+    style: "比賽",
+    instruments: "參賽者自帶伴奏",
+    genres: "華語流行",
     videos: []
   }
 };
