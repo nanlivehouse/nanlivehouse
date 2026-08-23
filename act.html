@@ -17,6 +17,8 @@
     <div class="dates-row" id="dates-row"></div>
   </div>
 
+  <div id="profile-area"></div>
+
   <h2 class="section-title">舞台片段</h2>
   <div id="video-area"></div>
 
@@ -55,6 +57,29 @@
       pill.textContent = `9/${d}`;
       datesRow.appendChild(pill);
     });
+
+    // 介紹區(簡介 / 演出形式 / 樂器 / 擅長歌曲種類)
+    const profileArea = document.getElementById('profile-area');
+    const fields = [
+      { key: 'intro',       label: '簡介' },
+      { key: 'style',       label: '演出形式' },
+      { key: 'instruments', label: '樂器' },
+      { key: 'genres',      label: '擅長歌曲種類' }
+    ];
+    const filled = fields.filter(f => act[f.key] && act[f.key].trim());
+
+    if (filled.length) {
+      profileArea.innerHTML = `
+        <h2 class="section-title">關於 ${act.name}</h2>
+        <div class="profile-grid">
+          ${filled.map(f => `
+            <div class="profile-card">
+              <div class="profile-label">${f.label}</div>
+              <div class="profile-value">${act[f.key]}</div>
+            </div>
+          `).join('')}
+        </div>`;
+    }
 
     // 影片區
     if (act.videos && act.videos.length) {
