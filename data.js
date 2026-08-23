@@ -176,13 +176,11 @@ const ACTS = {
     instruments: "參賽者自帶伴奏",
     genres: "華語流行",
     videos: []
-  }
-};
-
+  },
 /* weekday: 0=一 1=二 2=三 3=四 4=五 5=六 6=日 (依這個月第一天對齊用) */
 const FIRST_WEEKDAY = 1; // 9/1 是星期二 → index 1
 const DAYS_IN_MONTH = 30;
-
+ 
 const SCHEDULE = {
   1:  { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
   2:  { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
