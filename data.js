@@ -165,8 +165,8 @@ const ACTS = {
     instruments: "電吉他,貝斯,keyboard,爵士鼓",
     genres: "英文、華語流行",
     videos: [
-      "https://www.instagram.com/reel/Dar8qqGPAId/"
-      "https://www.instagram.com/reel/Db0qt9nv4Jj/"
+      "https://www.instagram.com/reel/Dar8qqGPAId/",
+      "https://www.instagram.com/reel/Db0qt9nv4Jj/",
     ]
   },
   "jay-cosplay": {
@@ -177,6 +177,7 @@ const ACTS = {
     genres: "華語流行",
     videos: []
   },
+   }
 /* weekday: 0=一 1=二 2=三 3=四 4=五 5=六 6=日 (依這個月第一天對齊用) */
 const FIRST_WEEKDAY = 1; // 9/1 是星期二 → index 1
 const DAYS_IN_MONTH = 30;
