@@ -166,6 +166,7 @@ const ACTS = {
     genres: "",
     videos: [
       "https://www.instagram.com/reel/Dar8qqGPAId/"
+      "https://www.instagram.com/reel/Db0qt9nv4Jj/"
     ]
   },
   "jay-cosplay": {
