@@ -9,26 +9,89 @@
 </head>
 <body>
 
-<header class="marquee">
-  <div class="kicker">駐唱｜川菜｜宴客菜｜調酒｜生啤酒</div>
-  <h1>南方酒館</h1>
-  <div class="sub" id="month-sub">演出班表</div>
-</header>
-
-<main class="wrap">
-
-  <div class="weekday-row">
-    <div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div>
+<div class="hero">
+  <div class="hero-top">
+    <div class="eyebrow"><span class="dot"></span>LIVE HOUSE ｜ 南方酒館</div>
+    <div class="portfolio-pill">RESERVATION OPEN</div>
   </div>
 
-  <div class="cal-grid" id="cal-grid"></div>
+  <div class="hero-headline">
+    <span class="doodle d1">✦</span>
+    <p class="hand-hello">哈囉！</p>
+    <h1 class="big-title">南方酒館</h1>
+    <span class="doodle d2">➤</span>
+  </div>
+
+  <div class="tagline-wrap">
+    <span class="tagline">駐唱・川菜・宴客菜・調酒・生啤酒</span>
+  </div>
+
+  <div class="hero-meta" id="month-sub">Loading…</div>
+</div>
+
+<section class="feature-section">
+  <h2 class="feature-heading">今晚吃什麼、聽誰唱</h2>
+  <div class="feature-row">
+    <div class="feature-item">
+      <div class="feature-icon">🎤</div>
+      <h3>駐唱</h3>
+      <p>每晚不同歌手現場演出</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🌶️</div>
+      <h3>川菜</h3>
+      <p>道地川味,辣得夠勁</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🍽️</div>
+      <h3>宴客菜</h3>
+      <p>聚會聚餐的體面選擇</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🍸</div>
+      <h3>調酒</h3>
+      <p>手工特調,配歌正好</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🍺</div>
+      <h3>生啤酒</h3>
+      <p>冰涼現拉,佐菜首選</p>
+    </div>
+  </div>
+</section>
+
+<section class="schedule-band">
+  <div class="schedule-inner">
+    <div class="schedule-heading-row">
+      <h2 class="schedule-heading">本月演出班表</h2>
+      <span class="mini-badge">點名字看影片 →</span>
+    </div>
+
+    <div class="weekday-row">
+      <div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div>
+    </div>
+
+    <div class="cal-grid" id="cal-grid"></div>
+  </div>
+</section>
+
+<main class="wrap">
 
   <h2 class="section-title">本月歌手</h2>
   <div class="act-grid" id="act-grid"></div>
 
-  <footer>
-    點歌手名字看他們在南方酒館演出的精彩片段 · 訂位前先認識今晚駐唱歌手<br>
-    <a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">@nanlivehouse</a>
+  <div class="cta-band" style="margin-top:56px;">
+    <div class="cta-left">
+      <h2>想訂位聽現場？<br><span class="accent">follow us</span></h2>
+      <p>訂位前先看看今晚駐唱是誰,追蹤 IG 掌握最新場次。</p>
+    </div>
+    <div class="cta-right">
+      IG：<a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">@nanlivehouse</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    南方酒館 · 點歌手名字看他們在台上的精彩片段
   </footer>
 
 </main>
@@ -40,7 +103,6 @@
 
   const calGrid = document.getElementById('cal-grid');
 
-  // 補前面的空格,讓 1 號對齊到正確星期
   for (let i = 0; i < FIRST_WEEKDAY; i++) {
     const empty = document.createElement('div');
     empty.className = 'day-card empty';
@@ -61,7 +123,6 @@
     if (info.private) html += `<span class="tag private-tag">包場</span>`;
 
     if (!info.closed) {
-      html += `<hr class="perf">`;
       if (info.sets && info.sets.length) {
         html += `<ul class="lineup">`;
         info.sets.forEach(s => {
@@ -72,7 +133,7 @@
         });
         html += `</ul>`;
       } else if (info.private) {
-        html += `<div style="font-size:11px;color:var(--muted)">不開放一般訂位</div>`;
+        html += `<div class="private-note">不開放一般訂位</div>`;
       }
     }
 
@@ -80,7 +141,6 @@
     calGrid.appendChild(card);
   }
 
-  // 本月歌手總覽(依 ACTS 定義順序,只列有出場的)
   const actGrid = document.getElementById('act-grid');
   Object.keys(ACTS).forEach(id => {
     if (!appearedActs.has(id)) return;
