@@ -12,6 +12,9 @@
         (手機 IG App 內點分享 → 複製連結)。
         貼文網址長這樣：https://www.instagram.com/reel/xxxxxxxxx/
         videos 留空時,頁面會顯示「影片準備中」。
+      - 提醒：每一筆資料的最後一個欄位「後面不要加逗號」,但中間
+        每個欄位後面「都要加逗號」,包含 videos 陣列裡每一支影片
+        網址中間也要用逗號隔開,少打一個逗號整個網站就會打不開。
    3) SCHEDULE：每一天的演出時段,對應到 ACTS 裡的 id。
       公休寫 { closed: true }
       包場寫 { private: true, sets:[...] }  sets 可留空陣列
@@ -23,11 +26,11 @@ const MONTH_SUBLABEL = "南方酒館 演出班表";
 const ACTS = {
   "bb": {
     name: "ㄌㄌ",
-   intro: "南方酒館的固定班底,就算沒排班也會突然出現在店裡,唱腔溫暖細膩。",
-   style: "單人自彈自唱",
-   instruments: "吉他",
-   genres: "抒情、民謠、華語流行",
-   videos: [
+    intro: "南方酒館的固定班底,就算沒排班也會突然出現在店裡,唱腔溫暖細膩。",
+    style: "單人自彈自唱",
+    instruments: "吉他",
+    genres: "抒情、民謠、華語流行",
+    videos: [
       "https://www.instagram.com/reel/DcTSesaz41V/",
       "https://www.instagram.com/reel/DZ6e37Wvxll/",
       "https://www.instagram.com/reel/DPyd6_IktMN/"
@@ -100,7 +103,7 @@ const ACTS = {
   },
   "binggan": {
     name: "餅乾",
-    intro: "會讓你帶著好心情走出這家店，主持功力一流",
+    intro: "會讓你帶著好心情走出這家店,主持功力一流",
     style: "單人自彈自唱",
     instruments: "吉他",
     genres: "民謠、華語流行",
@@ -142,7 +145,7 @@ const ACTS = {
   },
   "nanfang-qiaorou": {
     name: "南方樂團 ft. 巧柔",
-    intro: "大馬女歌手配上full band演出，絕對讓你大飽耳福",
+    intro: "大馬女歌手配上full band演出,絕對讓你大飽耳福",
     style: "樂團",
     instruments: "電吉他,貝斯,keyboard,爵士鼓",
     genres: "英文、華語流行",
@@ -160,13 +163,13 @@ const ACTS = {
   },
   "nanfang-anbb": {
     name: "南方樂團 ft. 安娜ㄌㄌ",
-    intro: "雙人組合搭配full band演出，喜歡樂團的你不容錯過",
+    intro: "雙人組合搭配full band演出,喜歡樂團的你不容錯過",
     style: "樂團",
     instruments: "電吉他,貝斯,keyboard,爵士鼓",
     genres: "英文、華語流行",
     videos: [
       "https://www.instagram.com/reel/Dar8qqGPAId/",
-      "https://www.instagram.com/reel/Db0qt9nv4Jj/",
+      "https://www.instagram.com/reel/Db0qt9nv4Jj/"
     ]
   },
   "jay-cosplay": {
@@ -176,12 +179,13 @@ const ACTS = {
     instruments: "參賽者自帶伴奏",
     genres: "華語流行",
     videos: []
-  },
-   }
+  }
+};
+
 /* weekday: 0=一 1=二 2=三 3=四 4=五 5=六 6=日 (依這個月第一天對齊用) */
 const FIRST_WEEKDAY = 1; // 9/1 是星期二 → index 1
 const DAYS_IN_MONTH = 30;
- 
+
 const SCHEDULE = {
   1:  { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
   2:  { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
@@ -195,13 +199,13 @@ const SCHEDULE = {
   10: { sets: [ { t: "20:30", a: "suzhan-weiye" }, { t: "22:00", a: "suzhan-weiye" } ] },
   11: { sets: [ { t: "19:00", a: "makewish" }, { t: "20:30", a: "makewish" }, { t: "22:00", a: "anna-bb" }, { t: "23:30", a: "anna-bb" } ] },
   12: { sets: [ { t: "19:00", a: "qilai" }, { t: "20:30", a: "qilai" }, { t: "22:00", a: "nanfang-qiaorou" }, { t: "23:30", a: "nanfang-qiaorou" } ] },
-  13: { sets: [ { t: "19:00", a: "mianmian-aqi" }, { t: "20:30", a: "mianmian-aqi" }, { t: "22:00", a: "binggan" }, { t: "23:30", a: "binggan" } ] },
+  13: { tag: "半包場", sets: [ { t: "19:00", a: "mianmian" }, { t: "20:30", a: "mianmian" }, { t: "22:00", a: "binggan" }, { t: "23:30", a: "binggan" } ] },
   14: { closed: true },
   15: { sets: [ { t: "20:30", a: "qilai" }, { t: "22:00", a: "qilai" } ] },
   16: { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
   17: { sets: [ { t: "20:30", a: "suzhan-weiye" }, { t: "22:00", a: "suzhan-weiye" } ] },
   18: { sets: [ { t: "19:00", a: "makewish" }, { t: "20:30", a: "makewish" }, { t: "22:00", a: "anna-kunlin" }, { t: "23:30", a: "anna-kunlin" } ] },
-  19: { private: true, sets: [ { t: "19:00", a: "anna-bb" }, { t: "20:30", a: "anna-bb" } ] },
+  19: { private: true, sets: [ { t: "19:00", a: "anna-kunlin" }, { t: "20:30", a: "anna-kunlin" } ] },
   20: { private: true, sets: [] },
   21: { closed: true },
   22: { sets: [ { t: "20:30", a: "qilai" }, { t: "22:00", a: "qilai" } ] },
