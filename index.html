@@ -9,96 +9,57 @@
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-top">
-    <div class="eyebrow"><span class="dot"></span>LIVE HOUSE ｜ 南方酒館</div>
-    <div class="portfolio-pill">RESERVATION OPEN</div>
-  </div>
+<header class="top-nav">
+  <div class="wordmark">南方酒館</div>
+  <nav>
+    <a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">Instagram</a>
+    <span>Live House</span>
+  </nav>
+</header>
 
-  <div class="hero-headline">
-    <span class="doodle d1">✦</span>
-    <p class="hand-hello">歡迎來到！</p>
-    <h1 class="big-title">南方酒館</h1>
-    <span class="doodle d2">➤</span>
-  </div>
-
-  <div class="tagline-wrap">
-    <span class="tagline">駐唱・川菜・宴客菜・調酒・生啤酒</span>
-  </div>
-
-  <div class="hero-meta" id="month-sub">Loading…</div>
-</div>
-
-<section class="feature-section">
-  <h2 class="feature-heading">今晚吃什麼、聽誰唱</h2>
-  <div class="feature-row">
-    <div class="feature-item">
-      <div class="feature-icon">🎤</div>
-      <h3>駐唱</h3>
-      <p>每晚不同歌手現場演出</p>
+<section class="hero">
+  <h1 class="hero-title">
+    <span>南方</span>
+    <span class="accent">酒館</span>
+  </h1>
+  <div class="hero-bottom">
+    <div class="hero-tags">
+      <span>駐唱</span>
+      <span>川菜</span>
+      <span>宴客菜</span>
+      <span>調酒</span>
+      <span>生啤酒</span>
     </div>
-    <div class="feature-item">
-      <div class="feature-icon">🌶️</div>
-      <h3>川菜</h3>
-      <p>道地川味,辣得夠勁</p>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🍽️</div>
-      <h3>宴客菜</h3>
-      <p>聚會聚餐的體面選擇</p>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🍸</div>
-      <h3>調酒</h3>
-      <p>手工特調,配歌正好</p>
-    </div>
-    <div class="feature-item">
-      <div class="feature-icon">🍺</div>
-      <h3>生啤酒</h3>
-      <p>冰涼現拉,佐菜首選</p>
-    </div>
+    <p class="hero-blurb">每晚不同歌手現場演出,搭配道地川味、宴客好菜、手工調酒與冰涼生啤酒。訂位前先看看今晚是誰駐唱。</p>
   </div>
 </section>
 
-<section class="schedule-band">
-  <div class="schedule-inner">
-    <div class="schedule-heading-row">
-      <h2 class="schedule-heading">本月演出班表</h2>
-      <span class="mini-badge">點名字看影片 →</span>
-    </div>
+<main class="wrap">
+
+  <section class="schedule">
+    <div class="eyebrow-label" id="month-sub">Schedule</div>
 
     <div class="weekday-row">
       <div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div>
     </div>
 
     <div class="cal-grid" id="cal-grid"></div>
-  </div>
-</section>
-
-<main class="wrap">
+  </section>
 
   <h2 class="section-title">本月歌手</h2>
   <div class="act-grid" id="act-grid"></div>
 
-  <div class="cta-band" style="margin-top:56px;">
-    <div class="cta-left">
-      <h2>想訂位聽現場？<br><span class="accent">follow us</span></h2>
-      <p>訂位前先看看今晚駐唱是誰,追蹤 IG 掌握最新場次。</p>
-    </div>
-    <div class="cta-right">
-      IG：<a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">@nanlivehouse</a>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    南方酒館 · 點歌手名字看他們在台上的精彩片段
+  <footer>
+    <img src="logo.png" alt="南方酒館 logo" class="footer-logo">
+    點歌手名字看他們在南方酒館演出的精彩片段 · 訂位前先認識今晚駐唱歌手<br>
+    <a href="https://www.instagram.com/nanlivehouse/" target="_blank" rel="noopener">@nanlivehouse</a>
   </footer>
 
 </main>
 
 <script src="data.js"></script>
 <script>
-  document.getElementById('month-sub').textContent = MONTH_SUBLABEL + ' · ' + MONTH_LABEL;
+  document.getElementById('month-sub').textContent = 'Schedule — ' + MONTH_LABEL;
   document.title = '南方酒館｜' + MONTH_LABEL + ' 演出班表';
 
   const calGrid = document.getElementById('cal-grid');
@@ -121,6 +82,7 @@
     let html = `<span class="date-num">${day}</span>`;
     if (info.closed) html += `<span class="tag closed-tag">公休</span>`;
     if (info.private) html += `<span class="tag private-tag">包場</span>`;
+    if (info.tag) html += `<span class="tag note-tag">${info.tag}</span>`;
 
     if (!info.closed) {
       if (info.sets && info.sets.length) {
