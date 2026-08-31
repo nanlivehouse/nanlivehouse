@@ -173,8 +173,8 @@ const ACTS = {
     ]
   },
   "jay-cosplay": {
-    name: "周杰倫歌唱大賽",
-    intro: "周杰倫歌唱大賽",
+    name: "周杰倫模仿大賽",
+    intro: "周杰倫模仿歌唱大賽",
     style: "比賽",
     instruments: "參賽者自帶伴奏",
     genres: "華語流行",
