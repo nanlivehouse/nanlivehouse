@@ -172,6 +172,14 @@ const ACTS = {
       "https://www.instagram.com/reel/Db0qt9nv4Jj/"
     ]
   },
+  "ben": {
+    name: "Ben",
+    intro: "法律系暖男獨特嗓音,擅長英文流行歌曲",
+    style: "單人自彈自唱",
+    instruments: "吉他",
+    genres: "英文、華語流行",
+    videos: []
+  },
   "jay-cosplay": {
     name: "周杰倫模仿大賽",
     intro: "周杰倫模仿歌唱大賽",
@@ -198,7 +206,7 @@ const SCHEDULE = {
   9:  { sets: [ { t: "20:30", a: "bb" }, { t: "22:00", a: "bb" } ] },
   10: { sets: [ { t: "20:30", a: "suzhan-weiye" }, { t: "22:00", a: "suzhan-weiye" } ] },
   11: { sets: [ { t: "19:00", a: "makewish" }, { t: "20:30", a: "makewish" }, { t: "22:00", a: "anna-bb" }, { t: "23:30", a: "anna-bb" } ] },
-  12: { sets: [ { t: "19:00", a: "mianmian" }, { t: "20:30", a: "mianmian" }, { t: "22:00", a: "nanfang-qiaorou" }, { t: "23:30", a: "nanfang-qiaorou" } ] },
+  12: { sets: [ { t: "19:00", a: "ben" }, { t: "20:30", a: "ben" }, { t: "22:00", a: "nanfang-qiaorou" }, { t: "23:30", a: "nanfang-qiaorou" } ] },
   13: { tag: "半包場", sets: [ { t: "19:00", a: "mianmian" }, { t: "20:30", a: "mianmian" }, { t: "22:00", a: "binggan" }, { t: "23:30", a: "binggan" } ] },
   14: { closed: true },
   15: { sets: [ { t: "20:30", a: "qilai" }, { t: "22:00", a: "qilai" } ] },
